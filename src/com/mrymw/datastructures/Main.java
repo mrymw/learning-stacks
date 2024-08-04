@@ -1,6 +1,7 @@
 package com.mrymw.datastructures;
 
-import java.util.Scanner;
+import java.util.*;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,5 +20,28 @@ public class Main {
         System.out.println(stack.peak());
         System.out.println(stack.pop());
         System.out.println(stack.peak());
+
+        /*System.out.println("<--- Queue --->");
+        Queue<Integer> queue = new Queue<>(7);
+        queue.enqueue(5);
+        queue.enqueue(3);
+        System.out.println(queue);
+        System.out.println(queue.front());
+        queue.dequeue();
+        System.out.println(queue);*/
+
+        System.out.println("<--- JAVA QUEUE --->");
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(10);
+        queue.add(3);
+        System.out.println(queue);
+        System.out.println(queue.peek());
+        queue.remove();
+        System.out.println(queue);
+
+        /*
+        * Stacks: push, pop, peek
+        * Queue : enqueue (add), dequeue (remove), front (peek)
+        */
     }
 }

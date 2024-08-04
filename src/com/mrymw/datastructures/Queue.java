@@ -6,8 +6,8 @@ import com.mrymw.exception.FullQueueException;
 import java.util.Arrays;
 
 public class Queue <E> {
-    protected int capacity;
-    protected  E[] queue;
+    int capacity;
+    E[] queue;
     int frontIndex; //index of the first element
     int rearIndex; //index of the next element
 
@@ -15,14 +15,14 @@ public class Queue <E> {
         this.capacity = capacity;
         queue = (E[]) new Object[capacity];
         frontIndex = rearIndex = 0;}
-    public int size(){return (capacity - (frontIndex + rearIndex)) % capacity;}
+    public int size(){return (capacity - frontIndex + rearIndex) % capacity;}
     public boolean isEmpty() {return (frontIndex == rearIndex);}
     public E front() throws EmptyQueueException {
         if(isEmpty()) {throw  new EmptyQueueException("Queue is EMPTY!");}
         return queue[frontIndex];
     }
     public void enqueue(E element) throws FullQueueException {
-        if(size() == capacity-1) throw new FullQueueException("Queue is FULL!");
+        if(size() == capacity -1) throw new FullQueueException("Queue is FULL!");
         queue[rearIndex] = element;
         rearIndex = (rearIndex + 1) % capacity;
     }
