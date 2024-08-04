@@ -3,6 +3,8 @@ package com.mrymw.datastructures;
 import com.mrymw.exception.EmptyQueueException;
 import com.mrymw.exception.FullQueueException;
 
+import java.util.Arrays;
+
 public class Queue <E> {
     protected int capacity;
     protected  E[] queue;
@@ -32,4 +34,18 @@ public class Queue <E> {
         return temp;
     }
 
+    @Override
+    public String toString() {
+        int index = frontIndex;
+        StringBuilder stringBuilder = new StringBuilder("[");
+        if(size()>0) stringBuilder.append(queue[index].toString());
+        if(size()>1) {
+            index++;
+            while (index!= rearIndex) {
+                stringBuilder.append(", ").append(queue[index].toString());
+                index = (index + 1) % capacity;
+            }
+        }
+        return stringBuilder + "]";
+    }
 }
