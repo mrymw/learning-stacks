@@ -17,6 +17,12 @@ public class Main {
         }
         int [] stackArray = {2,4,6,8};
         ReverseStack.reverse(stackArray);
+
+        String sentence = "apples and bananas";
+        WordReversal.reverseString(sentence);
+
+
+
     }
 
 
