@@ -21,7 +21,8 @@ public class Main {
         String sentence = "apples and bananas";
         WordReversal.reverseString(sentence);
 
-
+        String sentence1 = "how are you today?";
+        WordReversal.reverseString(sentence1);
 
     }
 
